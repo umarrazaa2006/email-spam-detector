@@ -2,10 +2,14 @@ from flask import Flask, request, jsonify, render_template
 import pickle
 import string
 import nltk
+
 from nltk.corpus import stopwords
 from nltk.stem.porter import PorterStemmer
 from flask_cors import CORS
 import os
+nltk.download('punkt')
+nltk.download('punkt_tab')   # ✅ ADD THIS
+nltk.download('stopwords')
 
 app = Flask(__name__, template_folder='app/templates', static_folder='app/static')
 CORS(app)
